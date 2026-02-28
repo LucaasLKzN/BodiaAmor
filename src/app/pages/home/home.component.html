@@ -1,0 +1,52 @@
+<div class="home-container">
+
+  @if (!sheSaidNo) {
+    <div class="question-box">
+      <h2>Você me odeia? 🤨</h2>
+      <p class="subtitle">Responda com sinceridade...</p>
+
+      <div class="buttons-container">
+        <button class="btn-spotify" (click)="accepted()">Não! ❤️</button>
+
+        <button
+          class="btn-fugitive"
+          [style.top.%]="buttonTop"
+          [style.left.%]="buttonLeft"
+          (mouseenter)="moveButton()"
+          (click)="moveButton()">
+          Sim 😠
+        </button>
+      </div>
+    </div>
+  }
+
+  @else {
+    <div class="success-box">
+      <h2>Eu sabia! Também te amo! 😍</h2>
+      <p class="subtitle">Eu queria fazer isso tem um tempinho kkkkk te adoro minha princesa</p>
+
+      <div class="gallery-grid">
+        @for (foto of photos; track foto.url) {
+          <div class="polaroid">
+            <div class="photo-wrapper">
+              <img [src]="foto.url" [alt]="foto.caption">
+            </div>
+            <p class="caption">{{ foto.caption }}</p>
+          </div>
+        }
+      </div>
+
+      <div class="player-mock">
+        <div class="track-info">
+          <span class="music-icon">🎶</span> Espero que goste dessa - No Pique Spotify Amor
+        </div>
+
+        <div class="controls" (click)="toggleMusic()">
+          {{ isPlaying ? '⏸️' : '▶️' }}
+        </div>
+      </div>
+    </div>
+  }
+  <audio #audioPlayer src="Cura.mp3" loop></audio>
+
+</div>

@@ -1,0 +1,112 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+}
+
+.login-card {
+  background-color: var(--bg-elevated);
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 24px rgba(138, 43, 226, 0.15);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+
+  span {
+    color: var(--custom-purple);
+  }
+}
+
+.subtitle {
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.hint {
+  color: var(--text-sub);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+
+  input {
+    width: 100%;
+    background-color: var(--bg-highlight);
+    border: 1px solid transparent;
+    color: var(--text-main);
+    padding: 14px;
+    border-radius: 50px;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: var(--custom-purple);
+      box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);
+    }
+
+    &::placeholder {
+      color: var(--text-sub);
+    }
+  }
+}
+
+.error-msg {
+  color: #e22134;
+  font-size: 0.9rem;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  animation: shake 0.4s ease-in-out;
+}
+
+.btn-spotify {
+  background-color: var(--spotify-green);
+  color: #000;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.1s, background-color 0.2s;
+
+  &:hover {
+    background-color: #1ed760;
+    transform: scale(1.04);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 600px) {
+  .logo { font-size: 2rem; }
+  .login-card { padding: 2rem 1.5rem; }
+}
